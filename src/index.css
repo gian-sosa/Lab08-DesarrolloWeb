@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Modo oscuro controlado por la clase .dark en <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg-dashboard: var(--bg-dashboard);
+  --color-text-dashboard: var(--text-dashboard);
+  --color-card: var(--bg-card);
+}
+
+/* Modo claro (por defecto) */
+:root {
+  --bg-dashboard: oklch(0.97 0.01 256);
+  --text-dashboard: oklch(0.25 0.02 240);
+  --bg-card: oklch(1 0 0);
+}
+
+/* Modo oscuro */
+html.dark {
+  --bg-dashboard: oklch(0.15 0.02 240);
+  --text-dashboard: oklch(0.92 0.01 256);
+  --bg-card: oklch(0.22 0.02 240);
+}
+
